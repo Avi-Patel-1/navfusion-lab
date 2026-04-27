@@ -1,0 +1,215 @@
+{
+  "name": "gnss_pseudorange_ekf",
+  "seed": 962,
+  "duration_s": 36.0,
+  "truth_sample_rate_hz": 20.0,
+  "trajectory": {
+    "profile": "mixed",
+    "mode": "3d",
+    "initial_position_m": [
+      40.0,
+      -30.0,
+      115.0
+    ],
+    "initial_velocity_mps": [
+      16.0,
+      1.2,
+      0.1
+    ],
+    "figure_eight_radius_m": 90.0
+  },
+  "sensors": {
+    "imu": {
+      "enabled": true,
+      "rate_hz": 20.0,
+      "accel_noise_std_mps2": 0.05,
+      "gyro_noise_std_radps": 0.002,
+      "accel_bias_mps2": [
+        0.035,
+        -0.025,
+        0.02
+      ],
+      "gyro_bias_radps": [
+        0.0,
+        0.0,
+        0.001
+      ],
+      "accel_bias_walk_std_mps2_sqrt_s": 0.0007,
+      "scale_factor": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "gps": {
+      "enabled": false,
+      "rate_hz": 1.0,
+      "position_noise_std_m": 1.8,
+      "velocity_noise_std_mps": 0.25,
+      "latency_s": 0.0,
+      "dropout_windows_s": [
+        [
+          28.0,
+          36.0
+        ]
+      ],
+      "outlier_bursts": [
+        {
+          "start_s": 43.0,
+          "duration_s": 0.15,
+          "position_offset_m": [
+            45.0,
+            -30.0,
+            20.0
+          ]
+        }
+      ]
+    },
+    "barometer": {
+      "enabled": true,
+      "rate_hz": 4.0,
+      "altitude_noise_std_m": 0.8,
+      "bias_m": 0.0,
+      "bias_walk_std_m_sqrt_s": 0.004
+    },
+    "magnetometer": {
+      "enabled": false,
+      "rate_hz": 2.0,
+      "heading_noise_std_rad": 0.035,
+      "disturbances": []
+    },
+    "range_beacon": {
+      "enabled": false,
+      "rate_hz": 2.0,
+      "range_noise_std_m": 0.9,
+      "beacons_m": [
+        [
+          0.0,
+          0.0,
+          100.0
+        ],
+        [
+          250.0,
+          -120.0,
+          125.0
+        ],
+        [
+          150.0,
+          220.0,
+          95.0
+        ]
+      ]
+    },
+    "wheel_odometry": {
+      "enabled": false,
+      "rate_hz": 10.0,
+      "velocity_noise_std_mps": 0.2
+    },
+    "radar_altimeter": {
+      "enabled": false,
+      "rate_hz": 8.0,
+      "altitude_noise_std_m": 0.35,
+      "terrain_altitude_m": 0.0,
+      "bias_m": 0.0,
+      "warmup_s": 0.0,
+      "packet_loss_probability": 0.0,
+      "timestamp_jitter_std_s": 0.0,
+      "dropout_windows_s": [],
+      "outlier_bursts": []
+    },
+    "doppler_velocity": {
+      "enabled": true,
+      "rate_hz": 3.0,
+      "velocity_noise_std_mps": 0.16,
+      "scale_factor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "axis_misalignment_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "warmup_s": 0.0,
+      "packet_loss_probability": 0.0,
+      "timestamp_jitter_std_s": 0.0,
+      "dropout_windows_s": [],
+      "outlier_bursts": []
+    },
+    "gnss_pseudorange": {
+      "enabled": true,
+      "rate_hz": 1.0,
+      "pseudorange_noise_std_m": 1.4,
+      "satellites_m": [
+        [
+          15600000.0,
+          7540000.0,
+          20140000.0
+        ],
+        [
+          -18760000.0,
+          13400000.0,
+          13020000.0
+        ],
+        [
+          17610000.0,
+          -14630000.0,
+          13480000.0
+        ],
+        [
+          -19170000.0,
+          -6100000.0,
+          18390000.0
+        ],
+        [
+          10320000.0,
+          21100000.0,
+          -12350000.0
+        ]
+      ],
+      "receiver_clock_bias_m": 0.0,
+      "clock_bias_correction_m": 0.0,
+      "clock_drift_mps": 0.0,
+      "packet_loss_probability": 0.02,
+      "timestamp_jitter_std_s": 0.02,
+      "dropout_windows_s": [
+        [
+          15.0,
+          18.0
+        ]
+      ],
+      "outlier_bursts": [
+        {
+          "start_s": 27.0,
+          "duration_s": 0.15,
+          "pseudorange_offset_m": 85.0
+        }
+      ]
+    }
+  },
+  "estimator": {
+    "update_rate_hz": 20.0,
+    "filters": [
+      "ekf",
+      "robust",
+      "adaptive"
+    ],
+    "profiles": [
+      "nominal",
+      "dropout_robust"
+    ],
+    "initial_position_error_m": [
+      4.0,
+      -3.0,
+      1.5
+    ],
+    "initial_velocity_error_mps": [
+      0.4,
+      -0.2,
+      0.05
+    ],
+    "max_stale_s": 1.2
+  },
+  "experiments": []
+}

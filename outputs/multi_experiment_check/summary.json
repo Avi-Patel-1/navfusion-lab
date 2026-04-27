@@ -1,0 +1,216 @@
+{
+  "name": "comparison",
+  "results": [
+    {
+      "experiment": "baseline",
+      "position_rmse_m": 3.5278312407080374,
+      "velocity_rmse_mps": 1.911492698249947,
+      "bias_rmse_mps2": 0.25320515298588914,
+      "final_position_error_m": 1.4450682636181809,
+      "final_velocity_error_mps": 0.08525052080727911,
+      "max_position_error_m": 13.133552692985928,
+      "max_error_during_dropout_m": 0.0,
+      "dropout_recovery_time_s": 0.0,
+      "nis_mean": 1.0582792097505678,
+      "nis_p95": 3.8418074952725036,
+      "mean_nees_position": 3.68075270002096,
+      "accepted_updates": 272,
+      "rejected_updates": 0,
+      "invalid_measurements": 0,
+      "residual_mean": 1.0370854372511857,
+      "residual_std": 1.4772342116542705,
+      "mean_covariance_trace": 7.985555934738872,
+      "final_covariance_trace": 2.551929317764239,
+      "diverged": false,
+      "updates_by_sensor": {
+        "gps": {
+          "accepted": 46,
+          "rejected": 0
+        },
+        "barometer": {
+          "accepted": 226,
+          "rejected": 0
+        }
+      },
+      "filter": "ekf",
+      "profile": "nominal",
+      "mode": "ekf"
+    },
+    {
+      "experiment": "baseline",
+      "position_rmse_m": 3.3250356311762874,
+      "velocity_rmse_mps": 1.6322611904192295,
+      "bias_rmse_mps2": 0.20720873812764887,
+      "final_position_error_m": 1.2749994904214412,
+      "final_velocity_error_mps": 0.06603709688680612,
+      "max_position_error_m": 12.28366785868183,
+      "max_error_during_dropout_m": 0.0,
+      "dropout_recovery_time_s": 0.0,
+      "nis_mean": 0.5876424762267426,
+      "nis_p95": 2.2227094309096382,
+      "mean_nees_position": 2.0780625092068887,
+      "accepted_updates": 272,
+      "rejected_updates": 0,
+      "invalid_measurements": 0,
+      "residual_mean": 1.0306925346834532,
+      "residual_std": 1.4386383438977235,
+      "mean_covariance_trace": 11.938195083943434,
+      "final_covariance_trace": 5.114738808889844,
+      "diverged": false,
+      "updates_by_sensor": {
+        "gps": {
+          "accepted": 46,
+          "rejected": 0
+        },
+        "barometer": {
+          "accepted": 226,
+          "rejected": 0
+        }
+      },
+      "filter": "ekf",
+      "profile": "dropout_robust",
+      "mode": "ekf"
+    },
+    {
+      "experiment": "dropout",
+      "position_rmse_m": 4.363735059891898,
+      "velocity_rmse_mps": 1.9466589508464458,
+      "bias_rmse_mps2": 0.2546433959099835,
+      "final_position_error_m": 1.5913693750440778,
+      "final_velocity_error_mps": 0.1363569170572794,
+      "max_position_error_m": 13.133552692985928,
+      "max_error_during_dropout_m": 8.764633712257986,
+      "dropout_recovery_time_s": 0.0,
+      "nis_mean": 1.0300299459987992,
+      "nis_p95": 3.710699969738633,
+      "mean_nees_position": 3.470217846731544,
+      "accepted_updates": 262,
+      "rejected_updates": 0,
+      "invalid_measurements": 10,
+      "residual_mean": 1.004917864082693,
+      "residual_std": 1.5747434580227366,
+      "mean_covariance_trace": 22.34970816132632,
+      "final_covariance_trace": 2.7536053509664877,
+      "diverged": false,
+      "updates_by_sensor": {
+        "gps": {
+          "accepted": 36,
+          "rejected": 0
+        },
+        "barometer": {
+          "accepted": 226,
+          "rejected": 0
+        }
+      },
+      "filter": "ekf",
+      "profile": "nominal",
+      "mode": "ekf"
+    },
+    {
+      "experiment": "dropout",
+      "position_rmse_m": 4.091353944662981,
+      "velocity_rmse_mps": 1.6706809509235887,
+      "bias_rmse_mps2": 0.20887948926488217,
+      "final_position_error_m": 1.4138377835345004,
+      "final_velocity_error_mps": 0.10181861729654422,
+      "max_position_error_m": 12.28366785868183,
+      "max_error_during_dropout_m": 8.024386003385496,
+      "dropout_recovery_time_s": 0.0,
+      "nis_mean": 0.5643862702660634,
+      "nis_p95": 2.1563833519385014,
+      "mean_nees_position": 1.9404606264383029,
+      "accepted_updates": 262,
+      "rejected_updates": 0,
+      "invalid_measurements": 10,
+      "residual_mean": 1.002082195856784,
+      "residual_std": 1.5248668133569225,
+      "mean_covariance_trace": 75.5995750330203,
+      "final_covariance_trace": 5.576821767489514,
+      "diverged": false,
+      "updates_by_sensor": {
+        "gps": {
+          "accepted": 36,
+          "rejected": 0
+        },
+        "barometer": {
+          "accepted": 226,
+          "rejected": 0
+        }
+      },
+      "filter": "ekf",
+      "profile": "dropout_robust",
+      "mode": "ekf"
+    },
+    {
+      "experiment": "outlier",
+      "position_rmse_m": 3.6355873501781937,
+      "velocity_rmse_mps": 1.915039346518933,
+      "bias_rmse_mps2": 0.25330398763730905,
+      "final_position_error_m": 1.398211946874231,
+      "final_velocity_error_mps": 0.06275618741331726,
+      "max_position_error_m": 13.133552692985928,
+      "max_error_during_dropout_m": 0.0,
+      "dropout_recovery_time_s": 0.0,
+      "nis_mean": 4.38056371606976,
+      "nis_p95": 4.094662832261024,
+      "mean_nees_position": 3.9361629141555627,
+      "accepted_updates": 270,
+      "rejected_updates": 2,
+      "invalid_measurements": 0,
+      "residual_mean": 1.3732237443824444,
+      "residual_std": 4.204308515941588,
+      "mean_covariance_trace": 8.193662309426765,
+      "final_covariance_trace": 2.556798590770845,
+      "diverged": false,
+      "updates_by_sensor": {
+        "gps": {
+          "accepted": 44,
+          "rejected": 2
+        },
+        "barometer": {
+          "accepted": 226,
+          "rejected": 0
+        }
+      },
+      "filter": "ekf",
+      "profile": "nominal",
+      "mode": "ekf"
+    },
+    {
+      "experiment": "outlier",
+      "position_rmse_m": 3.4272858095164906,
+      "velocity_rmse_mps": 1.6361380506990846,
+      "bias_rmse_mps2": 0.20733101560914088,
+      "final_position_error_m": 1.1826069044212977,
+      "final_velocity_error_mps": 0.040801286185016744,
+      "max_position_error_m": 12.28366785868183,
+      "max_error_during_dropout_m": 0.0,
+      "dropout_recovery_time_s": 0.0,
+      "nis_mean": 2.646838980738363,
+      "nis_p95": 2.324149779296289,
+      "mean_nees_position": 2.2028904706085113,
+      "accepted_updates": 270,
+      "rejected_updates": 2,
+      "invalid_measurements": 0,
+      "residual_mean": 1.366741566075395,
+      "residual_std": 4.190384338692975,
+      "mean_covariance_trace": 12.298138832932159,
+      "final_covariance_trace": 5.136749187787148,
+      "diverged": false,
+      "updates_by_sensor": {
+        "gps": {
+          "accepted": 44,
+          "rejected": 2
+        },
+        "barometer": {
+          "accepted": 226,
+          "rejected": 0
+        }
+      },
+      "filter": "ekf",
+      "profile": "dropout_robust",
+      "mode": "ekf"
+    }
+  ],
+  "best_result": "baseline_ekf_dropout_robust"
+}

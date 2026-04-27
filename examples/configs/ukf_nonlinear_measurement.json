@@ -1,0 +1,20 @@
+{
+  "name": "ukf_nonlinear_measurement",
+  "seed": 219,
+  "duration_s": 52.0,
+  "trajectory": {"profile": "figure_eight", "mode": "3d", "initial_position_m": [10.0, 15.0, 100.0], "figure_eight_radius_m": 95.0},
+  "sensors": {
+    "gps": {"enabled": true, "rate_hz": 0.5, "position_noise_std_m": 2.8, "velocity_noise_std_mps": 0.45, "dropout_windows_s": []},
+    "barometer": {"enabled": true, "rate_hz": 4.0, "altitude_noise_std_m": 0.8},
+    "range_beacon": {
+      "enabled": true,
+      "rate_hz": 2.0,
+      "range_noise_std_m": 0.85,
+      "beacons_m": [[-80.0, -100.0, 100.0], [170.0, -90.0, 108.0], [95.0, 190.0, 93.0]]
+    }
+  },
+  "estimator": {
+    "filters": ["ekf", "ukf"],
+    "profiles": ["nominal"]
+  }
+}

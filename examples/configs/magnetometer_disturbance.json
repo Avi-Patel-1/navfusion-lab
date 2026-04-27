@@ -1,0 +1,26 @@
+{
+  "name": "magnetometer_disturbance",
+  "seed": 173,
+  "duration_s": 55.0,
+  "trajectory": {"profile": "coordinated_turn", "mode": "3d"},
+  "sensors": {
+    "magnetometer": {
+      "enabled": true,
+      "rate_hz": 2.0,
+      "heading_noise_std_rad": 0.035,
+      "disturbances": [
+        {"start_s": 26.0, "duration_s": 6.0, "heading_offset_rad": 0.55}
+      ]
+    },
+    "gps": {
+      "enabled": true,
+      "rate_hz": 1.0,
+      "dropout_windows_s": [[24.0, 33.0]],
+      "outlier_bursts": []
+    }
+  },
+  "estimator": {
+    "filters": ["ekf"],
+    "profiles": ["nominal", "conservative", "dropout_robust"]
+  }
+}

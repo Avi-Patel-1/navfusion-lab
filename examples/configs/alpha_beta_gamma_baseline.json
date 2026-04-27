@@ -1,0 +1,28 @@
+{
+  "name": "alpha_beta_gamma_baseline",
+  "seed": 744,
+  "duration_s": 22.0,
+  "truth_sample_rate_hz": 10.0,
+  "trajectory": {
+    "profile": "straight_line",
+    "mode": "3d",
+    "initial_position_m": [0.0, 0.0, 60.0],
+    "initial_velocity_mps": [8.0, 0.6, 0.0]
+  },
+  "sensors": {
+    "imu": {"enabled": true, "rate_hz": 10.0, "accel_noise_std_mps2": 0.04},
+    "gps": {"enabled": true, "rate_hz": 2.0, "position_noise_std_m": 1.4, "velocity_noise_std_mps": 0.25},
+    "barometer": {"enabled": true, "rate_hz": 2.0, "altitude_noise_std_m": 0.6},
+    "range_beacon": {"enabled": false},
+    "magnetometer": {"enabled": false},
+    "wheel_odometry": {"enabled": false}
+  },
+  "estimator": {
+    "update_rate_hz": 10.0,
+    "filters": ["abg", "linear"],
+    "profiles": ["nominal"],
+    "initial_position_error_m": [2.0, -1.0, 0.8],
+    "initial_velocity_error_mps": [0.3, -0.1, 0.0],
+    "max_stale_s": 0.8
+  }
+}

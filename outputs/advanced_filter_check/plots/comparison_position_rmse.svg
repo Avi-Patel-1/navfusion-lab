@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="340" viewBox="0 0 760 340">
+<rect width="100%" height="100%" fill="white"/><text x="52" y="30" font-family="Arial" font-size="18" font-weight="700">Comparison position RMSE</text>
+<line x1="52" y1="280" x2="736" y2="280" stroke="#263238"/><line x1="52" y1="42" x2="52" y2="280" stroke="#263238"/>
+<text x="585" y="324" font-family="Arial" font-size="12">m</text>
+<rect x="62.0" y="267.1" width="61.3" height="12.9" fill="#0f766e"/>
+<text x="62.0" y="300" font-family="Arial" font-size="11" transform="rotate(25 62.0,300)">advanced_filter_comparison_linear_nominal</text>
+<rect x="154.9" y="267.1" width="61.3" height="12.9" fill="#2563eb"/>
+<text x="154.9" y="300" font-family="Arial" font-size="11" transform="rotate(25 154.9,300)">advanced_filter_comparison_sqrt_nominal</text>
+<rect x="247.7" y="267.1" width="61.3" height="12.9" fill="#b45309"/>
+<text x="247.7" y="300" font-family="Arial" font-size="11" transform="rotate(25 247.7,300)">advanced_filter_comparison_information_nominal</text>
+<rect x="340.6" y="264.9" width="61.3" height="15.1" fill="#be123c"/>
+<text x="340.6" y="300" font-family="Arial" font-size="11" transform="rotate(25 340.6,300)">advanced_filter_comparison_ekf_nominal</text>
+<rect x="433.4" y="263.2" width="61.3" height="16.8" fill="#4f46e5"/>
+<text x="433.4" y="300" font-family="Arial" font-size="11" transform="rotate(25 433.4,300)">advanced_filter_comparison_robust_nominal</text>
+<rect x="526.3" y="264.5" width="61.3" height="15.5" fill="#15803d"/>
+<text x="526.3" y="300" font-family="Arial" font-size="11" transform="rotate(25 526.3,300)">advanced_filter_comparison_adaptive_nominal</text>
+<rect x="619.1" y="56.0" width="61.3" height="224.0" fill="#7c3aed"/>
+<text x="619.1" y="300" font-family="Arial" font-size="11" transform="rotate(25 619.1,300)">advanced_filter_comparison_particle_nominal</text>
+</svg>

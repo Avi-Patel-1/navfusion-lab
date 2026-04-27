@@ -1,0 +1,20 @@
+{
+  "name": "range_beacon_ekf",
+  "seed": 144,
+  "duration_s": 50.0,
+  "trajectory": {"profile": "figure_eight", "mode": "3d", "initial_position_m": [40.0, -10.0, 70.0], "figure_eight_radius_m": 80.0},
+  "sensors": {
+    "gps": {"enabled": false},
+    "barometer": {"enabled": true, "rate_hz": 4.0, "altitude_noise_std_m": 0.9},
+    "range_beacon": {
+      "enabled": true,
+      "rate_hz": 2.0,
+      "range_noise_std_m": 0.8,
+      "beacons_m": [[-90.0, -90.0, 75.0], [140.0, -80.0, 82.0], [90.0, 160.0, 65.0], [-130.0, 110.0, 92.0]]
+    }
+  },
+  "estimator": {
+    "filters": ["ekf"],
+    "profiles": ["nominal", "conservative"]
+  }
+}

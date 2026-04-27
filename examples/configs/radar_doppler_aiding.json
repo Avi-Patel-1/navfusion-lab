@@ -1,0 +1,55 @@
+{
+  "name": "radar_doppler_aiding",
+  "seed": 881,
+  "duration_s": 34.0,
+  "truth_sample_rate_hz": 20.0,
+  "trajectory": {
+    "profile": "climb_descent",
+    "mode": "3d",
+    "initial_position_m": [0.0, 0.0, 90.0],
+    "initial_velocity_mps": [14.0, 1.0, 0.4]
+  },
+  "sensors": {
+    "imu": {"enabled": true, "rate_hz": 20.0, "accel_noise_std_mps2": 0.05},
+    "gps": {
+      "enabled": true,
+      "rate_hz": 0.5,
+      "position_noise_std_m": 2.2,
+      "velocity_noise_std_mps": 0.35,
+      "dropout_windows_s": [[12.0, 19.0]]
+    },
+    "barometer": {"enabled": true, "rate_hz": 2.0, "altitude_noise_std_m": 0.9},
+    "radar_altimeter": {
+      "enabled": true,
+      "rate_hz": 8.0,
+      "altitude_noise_std_m": 0.35,
+      "terrain_altitude_m": 2.0,
+      "warmup_s": 1.0,
+      "packet_loss_probability": 0.04,
+      "timestamp_jitter_std_s": 0.015,
+      "outlier_bursts": [{"start_s": 24.0, "duration_s": 0.25, "altitude_offset_m": 8.0}]
+    },
+    "doppler_velocity": {
+      "enabled": true,
+      "rate_hz": 5.0,
+      "velocity_noise_std_mps": 0.12,
+      "scale_factor": [1.01, 0.995, 1.0],
+      "axis_misalignment_rad": [0.0, 0.0, 0.003],
+      "warmup_s": 0.5,
+      "packet_loss_probability": 0.03,
+      "timestamp_jitter_std_s": 0.01,
+      "outlier_bursts": [{"start_s": 26.0, "duration_s": 0.2, "velocity_offset_mps": [2.5, -1.5, 0.6]}]
+    },
+    "range_beacon": {"enabled": false},
+    "magnetometer": {"enabled": false},
+    "wheel_odometry": {"enabled": false}
+  },
+  "estimator": {
+    "update_rate_hz": 20.0,
+    "filters": ["ekf", "robust", "adaptive"],
+    "profiles": ["nominal", "dropout_robust"],
+    "initial_position_error_m": [5.0, -2.0, 1.0],
+    "initial_velocity_error_mps": [0.5, -0.2, 0.1],
+    "max_stale_s": 1.0
+  }
+}

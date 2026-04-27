@@ -1,0 +1,126 @@
+{
+  "name": "outlier",
+  "seed": 501,
+  "duration_s": 45.0,
+  "truth_sample_rate_hz": 20.0,
+  "trajectory": {
+    "profile": "mixed",
+    "mode": "3d",
+    "initial_position_m": [
+      0.0,
+      0.0,
+      120.0
+    ],
+    "initial_velocity_mps": [
+      18.0,
+      1.5,
+      0.2
+    ],
+    "figure_eight_radius_m": 90.0
+  },
+  "sensors": {
+    "imu": {
+      "enabled": true,
+      "rate_hz": 20.0,
+      "accel_noise_std_mps2": 0.045,
+      "gyro_noise_std_radps": 0.002,
+      "accel_bias_mps2": [
+        0.035,
+        -0.025,
+        0.02
+      ],
+      "gyro_bias_radps": [
+        0.0,
+        0.0,
+        0.001
+      ],
+      "accel_bias_walk_std_mps2_sqrt_s": 0.0007,
+      "scale_factor": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "gps": {
+      "enabled": true,
+      "rate_hz": 1.0,
+      "position_noise_std_m": 1.8,
+      "velocity_noise_std_mps": 0.25,
+      "latency_s": 0.0,
+      "dropout_windows_s": [],
+      "outlier_bursts": [
+        {
+          "start_s": 28.0,
+          "duration_s": 1.0,
+          "position_offset_m": [
+            50.0,
+            -35.0,
+            18.0
+          ]
+        }
+      ]
+    },
+    "barometer": {
+      "enabled": true,
+      "rate_hz": 5.0,
+      "altitude_noise_std_m": 0.7,
+      "bias_m": 0.0,
+      "bias_walk_std_m_sqrt_s": 0.004
+    },
+    "magnetometer": {
+      "enabled": false,
+      "rate_hz": 2.0,
+      "heading_noise_std_rad": 0.035,
+      "disturbances": []
+    },
+    "range_beacon": {
+      "enabled": false,
+      "rate_hz": 2.0,
+      "range_noise_std_m": 0.9,
+      "beacons_m": [
+        [
+          0.0,
+          0.0,
+          100.0
+        ],
+        [
+          250.0,
+          -120.0,
+          125.0
+        ],
+        [
+          150.0,
+          220.0,
+          95.0
+        ]
+      ]
+    },
+    "wheel_odometry": {
+      "enabled": false,
+      "rate_hz": 10.0,
+      "velocity_noise_std_mps": 0.2
+    }
+  },
+  "estimator": {
+    "update_rate_hz": 20.0,
+    "filters": [
+      "ekf"
+    ],
+    "profiles": [
+      "nominal",
+      "dropout_robust"
+    ],
+    "initial_position_error_m": [
+      4.0,
+      -3.0,
+      1.5
+    ],
+    "initial_velocity_error_mps": [
+      0.5,
+      -0.25,
+      0.15
+    ],
+    "max_stale_s": 1.5
+  },
+  "experiments": []
+}

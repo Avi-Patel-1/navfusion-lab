@@ -1,0 +1,48 @@
+{
+  "name": "gnss_pseudorange_ekf",
+  "seed": 962,
+  "duration_s": 36.0,
+  "truth_sample_rate_hz": 20.0,
+  "trajectory": {
+    "profile": "mixed",
+    "mode": "3d",
+    "initial_position_m": [40.0, -30.0, 115.0],
+    "initial_velocity_mps": [16.0, 1.2, 0.1]
+  },
+  "sensors": {
+    "imu": {"enabled": true, "rate_hz": 20.0, "accel_noise_std_mps2": 0.05},
+    "gps": {"enabled": false},
+    "barometer": {"enabled": true, "rate_hz": 4.0, "altitude_noise_std_m": 0.8},
+    "doppler_velocity": {"enabled": true, "rate_hz": 3.0, "velocity_noise_std_mps": 0.16},
+    "gnss_pseudorange": {
+      "enabled": true,
+      "rate_hz": 1.0,
+      "pseudorange_noise_std_m": 1.4,
+      "receiver_clock_bias_m": 0.0,
+      "clock_bias_correction_m": 0.0,
+      "timestamp_jitter_std_s": 0.02,
+      "packet_loss_probability": 0.02,
+      "dropout_windows_s": [[15.0, 18.0]],
+      "outlier_bursts": [{"start_s": 27.0, "duration_s": 0.15, "pseudorange_offset_m": 85.0}],
+      "satellites_m": [
+        [15600000.0, 7540000.0, 20140000.0],
+        [-18760000.0, 13400000.0, 13020000.0],
+        [17610000.0, -14630000.0, 13480000.0],
+        [-19170000.0, -6100000.0, 18390000.0],
+        [10320000.0, 21100000.0, -12350000.0]
+      ]
+    },
+    "range_beacon": {"enabled": false},
+    "magnetometer": {"enabled": false},
+    "wheel_odometry": {"enabled": false},
+    "radar_altimeter": {"enabled": false}
+  },
+  "estimator": {
+    "update_rate_hz": 20.0,
+    "filters": ["ekf", "robust", "adaptive"],
+    "profiles": ["nominal", "dropout_robust"],
+    "initial_position_error_m": [4.0, -3.0, 1.5],
+    "initial_velocity_error_mps": [0.4, -0.2, 0.05],
+    "max_stale_s": 1.2
+  }
+}

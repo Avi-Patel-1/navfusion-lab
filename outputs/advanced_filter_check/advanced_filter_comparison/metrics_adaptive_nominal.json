@@ -1,0 +1,38 @@
+{
+  "position_rmse_m": 1.480680053902,
+  "velocity_rmse_mps": 0.7718262572654899,
+  "bias_rmse_mps2": 0.1377840717229494,
+  "final_position_error_m": 0.8299488175835225,
+  "final_velocity_error_mps": 0.12374678794514805,
+  "max_position_error_m": 3.286485482757945,
+  "max_error_during_dropout_m": 2.63993457038728,
+  "dropout_recovery_time_s": 0.0,
+  "nis_mean": 2.012888946561294,
+  "nis_p95": 4.381592849914406,
+  "mean_nees_position": 3.6647741952531137,
+  "accepted_updates": 196,
+  "rejected_updates": 1,
+  "invalid_measurements": 4,
+  "residual_mean": 1.4668363469599635,
+  "residual_std": 2.1641568916321643,
+  "mean_covariance_trace": 3.6616150276460906,
+  "final_covariance_trace": 1.0898796736329814,
+  "diverged": false,
+  "updates_by_sensor": {
+    "gps": {
+      "accepted": 24,
+      "rejected": 1
+    },
+    "barometer": {
+      "accepted": 85,
+      "rejected": 0
+    },
+    "range": {
+      "accepted": 87,
+      "rejected": 0
+    }
+  },
+  "filter": "adaptive",
+  "profile": "nominal",
+  "mode": "ekf"
+}

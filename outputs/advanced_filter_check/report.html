@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>comparison</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 28px; color: #172026; background: #f8fafb; }
+    h1 { margin-bottom: 4px; }
+    .meta { color: #54616c; margin-bottom: 16px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; max-width: 960px; margin: 12px 0 20px; }
+    .card { background: white; border: 1px solid #d9e2e7; padding: 10px 12px; }
+    .card span { display: block; color: #60717d; font-size: 12px; margin-bottom: 4px; }
+    .card strong { font-size: 17px; }
+    .table-wrap { overflow-x: auto; max-width: 100%; }
+    table { border-collapse: collapse; margin: 16px 0 28px; min-width: 720px; background: white; }
+    th, td { border: 1px solid #cfd8dc; padding: 8px 10px; text-align: right; }
+    th:first-child, td:first-child, th:nth-child(2), td:nth-child(2), th:nth-child(3), td:nth-child(3) { text-align: left; }
+    th { background: #eef3f6; }
+    figure { margin: 20px 0; }
+    img { max-width: 100%; border: 1px solid #d9e2e7; }
+    figcaption { color: #54616c; font-size: 12px; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <h1>comparison</h1>
+  <div class="meta">Navigation filter validation report</div>
+  <div class="cards"><div class="card"><span>Best result</span><strong>advanced_filter_comparison_sqrt_nominal</strong></div><div class="card"><span>Results</span><strong>7</strong></div></div>
+  <div class="table-wrap"><table><tr><th>Experiment</th><th>Filter</th><th>Profile</th><th>Position RMSE (m)</th><th>Velocity RMSE (m/s)</th><th>Rejected</th><th>Dropout max error (m)</th><th>Diverged</th></tr><tr><td>advanced_filter_comparison</td><td>linear</td><td>nominal</td><td>1.229</td><td>0.423</td><td>88</td><td>1.007</td><td>false</td></tr><tr><td>advanced_filter_comparison</td><td>sqrt</td><td>nominal</td><td>1.229</td><td>0.423</td><td>88</td><td>1.007</td><td>false</td></tr><tr><td>advanced_filter_comparison</td><td>information</td><td>nominal</td><td>1.229</td><td>0.423</td><td>88</td><td>1.007</td><td>false</td></tr><tr><td>advanced_filter_comparison</td><td>ekf</td><td>nominal</td><td>1.436</td><td>0.773</td><td>1</td><td>2.725</td><td>false</td></tr><tr><td>advanced_filter_comparison</td><td>robust</td><td>nominal</td><td>1.604</td><td>0.747</td><td>0</td><td>3.004</td><td>false</td></tr><tr><td>advanced_filter_comparison</td><td>adaptive</td><td>nominal</td><td>1.481</td><td>0.772</td><td>1</td><td>2.640</td><td>false</td></tr><tr><td>advanced_filter_comparison</td><td>particle</td><td>nominal</td><td>21.352</td><td>3.660</td><td>79</td><td>13.889</td><td>false</td></tr></table></div>
+  <figure><img src="plots/comparison_position_rmse.svg" alt="comparison_position_rmse"><figcaption>comparison_position_rmse</figcaption></figure>
+</body>
+</html>

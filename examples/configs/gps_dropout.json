@@ -1,0 +1,20 @@
+{
+  "name": "gps_dropout",
+  "seed": 41,
+  "duration_s": 70.0,
+  "trajectory": {"profile": "mixed", "mode": "3d"},
+  "sensors": {
+    "gps": {
+      "enabled": true,
+      "rate_hz": 1.0,
+      "position_noise_std_m": 2.2,
+      "velocity_noise_std_mps": 0.3,
+      "dropout_windows_s": [[18.0, 30.0], [46.0, 52.0]],
+      "outlier_bursts": []
+    }
+  },
+  "estimator": {
+    "filters": ["ekf"],
+    "profiles": ["nominal", "dropout_robust", "aggressive"]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "scenario_count": 3,
+  "scenarios": [
+    {
+      "name": "baseline",
+      "hash": "e1d432083fe7392e",
+      "valid": true,
+      "errors": [],
+      "filters": [
+        "ekf"
+      ],
+      "profiles": [
+        "nominal",
+        "dropout_robust"
+      ],
+      "duration_s": 45.0
+    },
+    {
+      "name": "dropout",
+      "hash": "a1c6db9ecdfecdbc",
+      "valid": true,
+      "errors": [],
+      "filters": [
+        "ekf"
+      ],
+      "profiles": [
+        "nominal",
+        "dropout_robust"
+      ],
+      "duration_s": 45.0
+    },
+    {
+      "name": "outlier",
+      "hash": "9fa72d797ec23ee6",
+      "valid": true,
+      "errors": [],
+      "filters": [
+        "ekf"
+      ],
+      "profiles": [
+        "nominal",
+        "dropout_robust"
+      ],
+      "duration_s": 45.0
+    }
+  ],
+  "input": "examples/configs/multi_experiment.json"
+}

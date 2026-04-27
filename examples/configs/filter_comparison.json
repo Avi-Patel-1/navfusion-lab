@@ -1,0 +1,37 @@
+{
+  "name": "filter_comparison",
+  "seed": 122,
+  "duration_s": 50.0,
+  "truth_sample_rate_hz": 20.0,
+  "trajectory": {
+    "profile": "coordinated_turn",
+    "mode": "3d",
+    "initial_position_m": [0.0, 0.0, 90.0],
+    "initial_velocity_mps": [16.0, 1.0, 0.1]
+  },
+  "sensors": {
+    "gps": {
+      "enabled": true,
+      "rate_hz": 1.0,
+      "position_noise_std_m": 2.0,
+      "velocity_noise_std_mps": 0.3,
+      "dropout_windows_s": [[22.0, 28.0]],
+      "outlier_bursts": [
+        {"start_s": 36.0, "duration_s": 0.2, "position_offset_m": [32.0, -24.0, 12.0]}
+      ]
+    },
+    "barometer": {"enabled": true, "rate_hz": 5.0, "altitude_noise_std_m": 0.8},
+    "range_beacon": {
+      "enabled": true,
+      "rate_hz": 1.0,
+      "range_noise_std_m": 1.1,
+      "beacons_m": [[0.0, 0.0, 90.0], [260.0, -80.0, 95.0], [120.0, 220.0, 90.0]]
+    }
+  },
+  "estimator": {
+    "filters": ["linear", "ekf", "ukf"],
+    "profiles": ["nominal"],
+    "initial_position_error_m": [5.0, -4.0, 1.0],
+    "initial_velocity_error_mps": [0.4, -0.2, 0.1]
+  }
+}

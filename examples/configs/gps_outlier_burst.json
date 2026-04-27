@@ -1,0 +1,22 @@
+{
+  "name": "gps_outlier_burst",
+  "seed": 72,
+  "duration_s": 55.0,
+  "trajectory": {"profile": "coordinated_turn", "mode": "3d"},
+  "sensors": {
+    "gps": {
+      "enabled": true,
+      "rate_hz": 1.0,
+      "position_noise_std_m": 1.6,
+      "velocity_noise_std_mps": 0.25,
+      "dropout_windows_s": [],
+      "outlier_bursts": [
+        {"start_s": 25.0, "duration_s": 2.2, "position_offset_m": [55.0, -42.0, 28.0]}
+      ]
+    }
+  },
+  "estimator": {
+    "filters": ["ekf"],
+    "profiles": ["aggressive", "nominal", "conservative"]
+  }
+}
