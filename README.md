@@ -16,7 +16,6 @@ A NumPy-only navigation-estimation sandbox for designing, tuning, and validating
 ## Quick Start
 
 ```bash
-cd "/Users/avipatel/Documents/New project 3/state_estimation_sensor_fusion_sandbox"
 python3 -m unittest discover -s tests
 python3 -m fusion_sandbox validate-config --config examples/configs/ekf_imu_gps_baro.json
 python3 -m fusion_sandbox list-examples
