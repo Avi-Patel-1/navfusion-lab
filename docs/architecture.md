@@ -11,6 +11,16 @@ The sandbox is organized around a reproducible simulation pipeline:
 
 The core dependency remains NumPy. File IO uses the standard library so demos run in a clean Python 3.12 environment.
 
+## AeroLab Integration
+
+AeroLab is the full 6DOF browser workbench at [https://aerosim6dof.onrender.com](https://aerosim6dof.onrender.com). This sandbox remains the standalone estimator-design project; AeroLab uses the same reporting ideas in its **Estimation** tab to review full flight-simulator artifacts.
+
+In practice:
+
+- this repo is where estimator algorithms, sensor models, and diagnostics are developed locally;
+- AeroLab is where a 6DOF run can be replayed, then inspected through truth-vs-sensor-vs-estimate residuals;
+- the AeroLab **Telemetry** and **Reports** tabs provide the surrounding subsystem review and generated CSV, JSON, SVG, and HTML artifacts.
+
 ## Data Flow
 
 ```text

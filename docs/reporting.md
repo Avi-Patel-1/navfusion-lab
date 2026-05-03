@@ -2,6 +2,17 @@
 
 Every run writes machine-readable logs and static plots.
 
+## AeroLab Estimation Tab
+
+Open the unified browser GUI at [https://aerosim6dof.onrender.com](https://aerosim6dof.onrender.com) and use the **Estimation** tab for the 6DOF-integrated version of this reporting workflow. AeroLab reads flight-run truth, sensor, and history artifacts, aligns the rows by time, and writes estimation report artifacts for browser review.
+
+The mapping is intentionally direct:
+
+- `truth.csv` and simulator history provide the truth trace.
+- sensor channels provide GNSS, barometer, pitot, radar-altimeter, and IMU comparisons.
+- fused estimates and residuals are shown as Estimation tab metrics and report plots.
+- generated artifacts are collected in **Reports** beside the rest of the mission packet.
+
 ## Per-Filter Artifacts
 
 - `estimates_<filter>_<profile>.csv`

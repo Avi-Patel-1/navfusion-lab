@@ -2,6 +2,18 @@
 
 A NumPy-only navigation-estimation sandbox for designing, tuning, and validating sensor-fusion filters. It simulates truth trajectories, asynchronous sensors, dropout windows, delayed measurements, outlier bursts, and multiple Kalman-filter families, then writes CSV, JSON, SVG, HTML, MATLAB, and Simulink handoff artifacts.
 
+## Unified Browser GUI
+
+The current public AeroLab interface is available at [https://aerosim6dof.onrender.com](https://aerosim6dof.onrender.com).
+
+This repository remains a standalone command-line sensor-fusion and navigation sandbox. In the unified AeroLab GUI, the same review workflow is exposed through:
+
+- **Estimation**: compare truth, GNSS, barometer, pitot, radar-altimeter, IMU, and fused navigation estimates for a 6DOF run.
+- **Telemetry**: inspect truth, sensor, estimate, alarm, and subsystem channels with search, pinning, current/min/max readouts, comparison traces, and export.
+- **Reports**: collect residual CSVs, metrics JSON, SVG plots, and HTML estimation reports.
+
+Use this repo directly when you want to design or tune estimator algorithms and sensor models. Use AeroLab when you want navigation and sensor-fusion review tied to the full 6DOF simulator, replay, mission events, and generated flight artifacts.
+
 ## What It Covers
 
 - 2D and 3D truth profiles: straight line, coordinated turn, climb/descent, aggressive acceleration, low-speed hover, figure-eight, and mixed maneuvers.
@@ -16,6 +28,7 @@ A NumPy-only navigation-estimation sandbox for designing, tuning, and validating
 ## Quick Start
 
 ```bash
+# from the cloned repository root
 python3 -m unittest discover -s tests
 python3 -m fusion_sandbox validate-config --config examples/configs/ekf_imu_gps_baro.json
 python3 -m fusion_sandbox list-examples
